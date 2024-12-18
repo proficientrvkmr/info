@@ -9,84 +9,37 @@
     <title>Ravi Kumar Kushwah</title>
     <link href="resources/google-fonts.css" rel="stylesheet">
     <link rel="stylesheet" href="resources/main.css" id="mainCssId">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+	<script>
+    function downloadResume() {
+      // Select the resume element
+      const element = document.getElementById('resumeDoc');
+
+      // Configure the options for html2pdf
+      const options = {
+        margin: 1,
+        filename: 'Ravi_Kumar_Kushwah_Java_MS.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      };
+
+      // Generate and download the PDF
+      html2pdf().set(options).from(element).save();
+    }
+</script>
 </head>
 <body class="light-bg">
 <form id="mainForm" class="main-form" action="#">
     <section class="page-wrap">
-        <div id="howItWorks" class="d-none">
-            <nav class="navbar" id="hiwHeader">
-                <div class="container">
-                    <a id="homeLogoLink" role="img" aria-label="Zety" class="navbar-brand zty p-none"></a>
-                    <div class="clearfix"></div>
-                </div>
-            </nav>
-            <!--Direct flow-->
-
-            <div class="content-how-it-works" id="contentHowItWorks" role="complementary" style="height: 615px;">
-                <section class="v-center">
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 steps-wrap">
-                                <h1 class="h1" onclick="startApp(event);">
-                                    Just three <span class="text-emphasized">simple</span> steps
-                                </h1>
-                                <ol class="list-steps">
-                                    <li>
-                                <span class="list-step-text">
-                                    Select a template from our library of <br>professional designs
-                                </span>
-                                    </li>
-                                    <li>
-                                <span class="list-step-text">
-
-Build your resume with our <br>industry-specific bullet points                                </span>
-                                    </li>
-                                    <li>
-                                <span class="list-step-text">
-Download your resume, print it out <br>and get it ready to send!                                </span>
-                                    </li>
-                                </ol>
-
-                            </div>
-
-                            <div class="col-md-6 cta-disclaimer-wrap">
-                                <a onclick="startApp(event);" title="Resume" class="icon-how-it-works"></a>
-                                <a class="btn btn-primary" id="btn-primary" onclick="startApp(event);">
-                                    Create My Resume
-                                </a>
-                                <p class="p toupvText">
-                                    By clicking Create My Resume, you agree to our <a class="link aTermsCndtn"
-                                                                                      href="https://zety.com/terms-of-service"
-                                                                                      onclick="termConditions(event);"
-                                                                                      aria-label="Terms of Use opens in a new tab">Terms
-                                    of Use</a> and
-                                    <a class="link aPrivacyPolicy" href="https://zety.com/privacy-policy"
-                                       onclick="privacyPolicy(event)" aria-label="Privacy Policy opens in a new tab">
-                                        Privacy Policy
-                                    </a>.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-        </div>
         <div id="app" role="main" class="main-app">
             <section class="page-wrapper">
                 <div class="page-final  ">
                     <main class="finalize-body">
                         <section class="container-fluid experiment-finalize-page experiment-finalize-page-v2">
                             <div class="finalize-resume-wrapper">
-                                <div class="d-flex body-resume" style="
-    /* width: 100px !important; */!i;!;
-">
+                                <div class="d-flex body-resume">
                                     <div class="preview-container js-document-wrap position-relative " id="resumeDoc">
-                                        <div class="loader-overlay loader-overlay-resume position-absolute d-none"
-                                             id="resumeLoader">
-                                            <div class="loader-img"></div>
-                                        </div>
                                         <div class="" tabindex="">
                                             <div>
                                                 <style type="text/css" id="static">
@@ -636,6 +589,7 @@ Download your resume, print it out <br>and get it ready to send!                
                                                                                                 class="chk"
                                                                                                 src="resources/profile-pic.jpeg"
                                                                                                 alt="Smiley face">
+												<a href="#" onclick="downloadResume()" class="btn btn-primary btn-prfl-edit photo-added" title="Download Profile">Download Resume</a>
 											</div>
                                                                                     </div>
                                                                                     <div class="clear"></div>
